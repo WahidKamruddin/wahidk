@@ -26,7 +26,7 @@ const Me = () => {
                 </div>
                 
                 <div className="">
-                    <h1 className="my-6 text-mocha-100 text-8xl">Hi, I'm <span className="text-mocha-300">Wahid,</span></h1>
+                    <h1 className="my-6 text-mocha-100 text-8xl">Hi, I&apos;m <span className="text-mocha-300">Wahid,</span></h1>
                     <h1 className="my-6 text-mocha-100 text-7xl">a <span className="text-mocha-300">{role}</span></h1>
                 </div>
             </div>
