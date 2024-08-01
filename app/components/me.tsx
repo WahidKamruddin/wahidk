@@ -2,9 +2,13 @@
 
 import Image from "next/image";
 import { useTypewriter } from "react-simple-typewriter";
+import { motion, useInView } from "framer-motion"
+import { useEffect, useRef } from "react";
 
 const Me = () => {
-
+    const ref = useRef(null);
+    const isInView = useInView(ref);
+    
     const arrList = ['developer.', 'designer.', 'coffee-addict.'];
 
     const [role] = useTypewriter({
@@ -13,17 +17,25 @@ const Me = () => {
         typeSpeed: 120,
         deleteSpeed: 90,
     });
-   
+    
+    useEffect(() => {
+        console.log("Element is in view: ", isInView)
+      }, [isInView])
 
     return ( 
-    <div className="h-screen overflow-clip">
+    <div className="h-screen overflow-clip" >
         <div className="py-40 px-14">
-            <div className="flex justify-between">
-                <div className="text-8xl">
+            <div ref={ref} className="flex justify-between">
+                <motion.div 
+                    className="text-8xl"
+                    initial={{x:-100}}
+                    style={{transform: isInView ? "none" : "translateX(200px)"}}
+                    transition={{duration: 1, delay:2}}
+                >
                     <h1 className="my-6 text-mocha-300">About me</h1>
                     <h1 className="my-6 text-mocha-200 relative right-32">About me</h1>
                     <h1 className="my-6 text-mocha-100 relative right-64">About me</h1>
-                </div>
+                </motion.div>
                 
                 <div className="">
                     <h1 className="my-6 text-mocha-100 text-8xl">Hi, I&apos;m <span className="text-mocha-300">Wahid,</span></h1>
