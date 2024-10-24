@@ -1,10 +1,12 @@
 'use client'
 
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion, MotionValue, useScroll, useSpring, useTransform } from "framer-motion"
 import { useRef } from "react"
 
 import EmblaCarousel from './EmblaCarousel'
 import { EmblaOptionsType } from 'embla-carousel'
+import Image from "next/image"
+
 
 const Projects = () => {
     const scrollRef = useRef(null)
@@ -14,37 +16,42 @@ const Projects = () => {
     })
 
     // Define transforms based on scroll position
-    const letterSpacing = useTransform(scrollYProgress, [0, 1/8], ['0px', '-50px']); // Collapse effect
-    const textView = useTransform(scrollYProgress, [0, 1/8], ['initial', 'none']); // Collapse effect
+    const letterSpacing = useTransform(scrollYProgress, [0, 0.05], ['0px', '-50px']); // Collapse effect
+    const textView = useTransform(scrollYProgress, [0, 0.05], ['initial', 'none']); // Collapse effect
 
-    const ballView = useTransform(scrollYProgress, [1/8, 1/4, 3/8], ['none', 'initial', 'none']); 
-    const ballMergeA = useTransform(scrollYProgress, [1/8, 3/8], ['0rem', '4rem']); 
-    const ballMergeB = useTransform(scrollYProgress, [1/8, 3/8], ['0rem', '-4rem']); 
+    const ballView = useTransform(scrollYProgress, [0.05, 0.1, 0.15], ['none', 'initial', 'none']); 
+    const ballMergeA = useTransform(scrollYProgress, [0.05, 0.15], ['0rem', '4rem']); 
+    const ballMergeB = useTransform(scrollYProgress, [0.05, 0.15], ['0rem', '-4rem']); 
 
-    const bigBallView = useTransform(scrollYProgress, [3/8, 4/8, 5/8], ['none', 'initial', 'none']); 
-    const bigBallScale = useTransform(scrollYProgress, [3/8, 5/8], [1, 2]); 
+    const bigBallView = useTransform(scrollYProgress, [0.15, 0.25, 0.35], ['none', 'initial', 'none']); 
+    const bigBallScale = useTransform(scrollYProgress, [0.15, 0.35], [1, 2]); 
 
-    const cupView = useTransform(scrollYProgress, [5/8, 6/8], ['none', 'initial']); 
-    const cupScale = useTransform(scrollYProgress, [3/8, 5/8, 6/8], [1, 2.25, 2.3]); 
+    const cupView = useTransform(scrollYProgress, [0.35, 0.45], ['none', 'initial']); 
+    const cupScale = useTransform(scrollYProgress, [0.25, 0.35, 0.45], [1, 2.25, 2.3]); 
 
-    const cupHandleScale = useTransform(scrollYProgress, [4/8, 5/8, 6/8], [0, 0.25, 1]); 
+    const cupHandleScale = useTransform(scrollYProgress, [0.25, 0.35, 0.45], [0, 0.25, 1]); 
 
-    const cupTranslateX = useTransform(scrollYProgress, [6/8, 7/8], ['0rem','-40rem']); 
-    const cupTranslateY = useTransform(scrollYProgress, [6/8, 7/8], ['0rem','-15rem']); 
+    const cupTranslateX = useTransform(scrollYProgress, [0.45, 0.55], ['0rem','-35rem']); 
+    const cupTranslateY = useTransform(scrollYProgress, [0.45, 0.55], ['0rem','-15rem']); 
 
-    const iPadView = useTransform(scrollYProgress, [6/8, 7/8], ['none', 'initial']); 
-    const iPadTranslate = useTransform(scrollYProgress, [6/8, 7/8], [1000, 0]); 
-    
+    const projectView = useTransform(scrollYProgress, [0.5, 0.8], ['none', 'initial']); 
+    const projectTranslate = useTransform(scrollYProgress, [0.5, 0.7], [-1000, 550]); 
+    const project2Translate = useTransform(scrollYProgress, [0.6, 0.8], [-1000, 550]); 
+    const project3Translate = useTransform(scrollYProgress, [0.7, 0.9], [-1000, 550]); 
 
-    const OPTIONS: EmblaOptionsType = { loop: true }
-    const SLIDES = ['/images/mellowmind.png', '/images/fit.jpg', '/images/afterschoolstartup.png' ]
+
+
+
+
 
 
 
     return (
-        <div className="h-[1000vh] relative overflow-clip" ref={scrollRef}>
+        <div className="h-[1000vh] mt-64 relative overflow-clip" ref={scrollRef}>
 
                 <div className="top-[40%] sticky w-full flex flex-col items-center justify-center">
+
+                    {/* Cup Animation */}
 
                     {/* Content with letter-spacing animation */}
                     <motion.h2
@@ -98,16 +105,37 @@ const Projects = () => {
                             style={{ display: cupView, scaleX: cupHandleScale, x: cupTranslateX, y: cupTranslateY}}
                         >
                         </motion.div>
-                    </div>
 
-                    <motion.div
-                        className="w-1/2 h-[30rem] top-1/4 left-[40rem] bg-mocha-100 border border-black rounded-xl absolute"
-                        style={{ display: iPadView, x: iPadTranslate}}
-                    >
-                        {/* insert carousel */}
-                        <div className="h-full flex justify-center items-center p-6 rounded-xl"><div className="w-full bg-vanilla-100 mx-10"><EmblaCarousel slides={SLIDES} options={OPTIONS}/></div></div>
-                    </motion.div>
+                        {/* Projects */}
+                        <div className="flex justify-end mr-24">
+                            <motion.div 
+                            className="absolute bg-mocha-200 p-4 rounded-xl overflow-hidden flex items-center"
+                            style={{display: projectView, y: projectTranslate}}
+                            >
+                            <a href='https://wahidkamruddin.github.io/lofi-soundboard/' target="_blank" ><Image src='/images/1.png' alt='project'width={700} height={700} className="rounded-xl object-cover"/></a>
+                            </motion.div>
+
+                            <motion.div 
+                                className="absolute bg-mocha-200 p-4 rounded-xl overflow-hidden flex items-center"
+                                style={{display: projectView, y: project2Translate}}
+                                >
+                                <a href='http://www.fitbyte.me/' target="_blank"><Image src='/images/2.png' alt='project'width={700} height={700} className="rounded-xl object-cover"/></a>
+                            </motion.div>
+
+                            <motion.div 
+                                className="absolute bg-mocha-200 p-4 rounded-xl overflow-hidden flex items-center"
+                                style={{display: projectView, y: project3Translate}}
+                                >
+                                <a className='' href='https://www.afterschoolstartup.com/' target= "_blank"><Image src='/images/3.png' alt='project'width={700} height={700} className="rounded-xl object-cover"/></a>
+                            </motion.div>
+                        </div>
+                        
+                    </div>
                 </div>
+
+                
+
+                
         </div> 
     )
 }
