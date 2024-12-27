@@ -62,7 +62,7 @@ const Me = () => {
 
             <div className="text-mocha-100 font-light flex justify-between">
                 <div className="ml-32 mt-24 text-4xl">
-                    <h4 className="my-4">A Bengali-American CS student</h4>
+                    <h4 className="my-4">A CS student</h4>
                     <h4 className="my-4">with a coffee addiction.*</h4>
 
                     <p className="text-2xl mt-24">*Currently in rehab (switched to water)</p>
