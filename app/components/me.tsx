@@ -23,8 +23,7 @@ const Me = () => {
     }, [isInView]);
 
     return ( 
-    <div className="h-screen overflow-clip">
-        <div className="py-40 px-14">
+    <div className="h-screen overflow-clip py-40 px-14">
             <div ref={ref} className="flex justify-between">
                 <div>
                     <motion.div 
@@ -56,24 +55,16 @@ const Me = () => {
                 
                 <div>
                     <h1 className="my-6 text-mocha-100 text-8xl">Hi, I&apos;m <span className="text-mocha-300">Wahid,</span></h1>
-                    <h1 className="my-6 text-mocha-100 text-7xl">a <span className="text-mocha-300">{role}</span></h1>
+                    <h1 className="mt-6 text-mocha-100 text-7xl">a <span className="text-mocha-300">{role}</span></h1>
                 </div>
             </div>
 
-            <div className="text-mocha-100 font-light flex justify-between">
-                <div className="ml-32 mt-24 text-4xl">
-                    <h4 className="my-4">A CS student</h4>
-                    <h4 className="my-4">with a coffee addiction.*</h4>
-
-                    <p className="text-2xl mt-24">*Currently in rehab (switched to water)</p>
-                </div>
-
-                <div className="p-6 mr-24 bg-mocha-200 rounded-xl">
-                    <Image alt='me' src='/images/picture.jpeg' width={300} height={300}/>
+            <div className="text-mocha-300  text-xl font-light flex justify-end">
+                <div className="w-5/12">
+                    Im a Bangladeshi-American born and raised in NYC. I have a passion for cafes, coffee, and all things design. I love to create beautiful and functional digital experiences that make people&apos;s lives easier and more enjoyable. When I&apos;m not coding or designing, you can find me exploring new cafes, sipping on a cappuccino, or working on my next side project.
                 </div>
             </div>
         </div>
-    </div>
     );
 }
 

@@ -2,26 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+html{
+    scroll-behavior: smooth;
+}
 
-::-webkit-scrollbar {
-    width: 10px;
-}
- 
-/* Track */
-::-webkit-scrollbar-track {
-    background: #9C6F44;
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: #563517;
-    border-radius: 5px;
-}
- 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #724E2C;
-}
+
+
 
 #fixedContainer {
     background-color:#ddd;

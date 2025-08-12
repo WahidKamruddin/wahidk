@@ -8,7 +8,6 @@ const AudioPlayer = () => {
   const togglePlayPause = () => {
     if (audioRef.current) {
       if (!isPlaying) {
-        audioRef.current.currentTime = 5;  // Start 5 seconds in
         audioRef.current.play();
       } else {
         audioRef.current.pause();
@@ -21,7 +20,7 @@ const AudioPlayer = () => {
     <div className="absolute flex w-full justify-end items-center pr-8">
       <audio ref={audioRef} src="/music/lofi.mp3" preload="auto" />
       <button
-        className="text-4xl text-mocha-400 hover:scale-110 transition-transform duration-200 focus:outline-none"
+        className="text-4xl text-mocha-400 hover:scale-110 hover:text-mocha-300 transition-transform duration-200 focus:outline-none"
         onClick={togglePlayPause}
       >
         {isPlaying ? <FaRegPauseCircle /> : <FaRegPlayCircle />}
