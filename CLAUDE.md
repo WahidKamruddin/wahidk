@@ -15,18 +15,19 @@ No test suite is configured.
 
 ## Architecture
 
-Next.js App Router portfolio site. All routes live under `app/`:
+Next.js App Router portfolio site. All routes live under `app/`; reusable components are in `app/components/`:
 
-- `app/layout.tsx` — root layout, Poppins font, global metadata
+- `app/layout.tsx` — root layout, Poppins font, global metadata + OpenGraph/Twitter cards. `metadataBase` is `https://wahidkamruddin.vercel.app`.
 - `app/page.tsx` — single-page composition: `<Hero>`, `<Me>`, `<Projects>`, `<Contact>`, with `<AudioPlayer>` fixed top-right
-- `app/globals.css` — Tailwind base + Embla Carousel CSS variables
+- `app/icon.tsx` — Next.js `ImageResponse` favicon: 32×32 PNG, "WK" text in Poppins SemiBold on `mocha-200` (`#9C6F44`) background.
+- `app/globals.css` — Tailwind base + smooth `scroll-behavior: smooth` on `html` + Embla Carousel CSS variables
 
 ### Component responsibilities
 
 - **`hero.tsx`** — landing section with Framer Motion entrance animations (`opacity: 0→1`, `x/y` slides). All animation variants use `opacity: 1` (not `100`).
 - **`me.tsx`** — about section; uses `useInView` with `once: false` so animations replay on scroll, and `useTypewriter` for the cycling role text.
 - **`projects.tsx`** — the most complex component. Scroll-driven coffee cup animation followed by a vertical project carousel. See full breakdown below.
-- **`contact.tsx`** — social links with an inline SVG `<linearGradient>` for the Instagram hover gradient. SVG attributes must use camelCase (`stopColor`, not `stop-color`).
+- **`contact.tsx`** — server component. Social links with an inline SVG `<linearGradient>` for the Instagram hover gradient. SVG attributes must use camelCase (`stopColor`, not `stop-color`).
 - **`audio.tsx`** — lofi audio toggle, `"use client"`, refs a static `/music/lofi.mp3`.
 - **`loading.tsx`** — standalone loading screen (not used in the main page flow currently).
 
