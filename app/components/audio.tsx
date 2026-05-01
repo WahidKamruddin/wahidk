@@ -1,4 +1,5 @@
-import React, { useRef, useState } from "react";
+"use client";
+import { useRef, useState } from "react";
 import { FaRegPlayCircle, FaRegPauseCircle } from "react-icons/fa";
 
 const AudioPlayer = () => {
@@ -6,13 +7,13 @@ const AudioPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(false);
 
   const togglePlayPause = () => {
-    if (audioRef.current) {
-      if (!isPlaying) {
-        audioRef.current.play();
-      } else {
-        audioRef.current.pause();
-      }
-      setIsPlaying(!isPlaying);
+    if (!audioRef.current) return;
+    if (isPlaying) {
+      audioRef.current.pause();
+      setIsPlaying(false);
+    } else {
+      audioRef.current.play().catch(() => setIsPlaying(false));
+      setIsPlaying(true);
     }
   };
 

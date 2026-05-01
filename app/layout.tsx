@@ -7,7 +7,7 @@ const poppins = Poppins({
   subsets: ['latin']
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Wahid Kamruddin | Full-Stack Developer & Designer",
   description:
     "Portfolio of Wahid Kamruddin — Full-Stack Developer & Designer specializing in Next.js, TypeScript, and modern UI/UX. View projects, skills, and contact details.",

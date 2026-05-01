@@ -1,5 +1,4 @@
 import {
-  AiOutlineInstagram,
   AiFillInstagram,
   AiFillLinkedin,
   AiFillGithub,
@@ -10,11 +9,11 @@ const Contact = () => {
     <div id="contact" className="h-[50vh] md:h-screen w-full bg-mocha-100">
       <svg width="0" height="0">
         <linearGradient id="instagram" x1="100%" y1="100%" x2="0%" y2="0%">
-          <stop stop-color="#f09433" offset="0%" />
-          <stop stop-color="#e6683c" offset="25%" />
-          <stop stop-color="#dc2743" offset="50%" />
-          <stop stop-color="#cc2366" offset="75%" />
-          <stop stop-color="#bc1888" offset="100%" />
+          <stop stopColor="#f09433" offset="0%" />
+          <stop stopColor="#e6683c" offset="25%" />
+          <stop stopColor="#dc2743" offset="50%" />
+          <stop stopColor="#cc2366" offset="75%" />
+          <stop stopColor="#bc1888" offset="100%" />
         </linearGradient>
       </svg>
 

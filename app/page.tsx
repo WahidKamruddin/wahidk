@@ -1,4 +1,3 @@
-"use client";
 import AudioPlayer from "./components/audio";
 import Contact from "./components/contact";
 import Hero from "./components/hero";
