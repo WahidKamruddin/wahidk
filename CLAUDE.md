@@ -17,7 +17,8 @@ No test suite is configured.
 
 Next.js App Router portfolio site. All routes live under `app/`; reusable components are in `app/components/`:
 
-- `app/layout.tsx` — root layout, Poppins font, global metadata + OpenGraph/Twitter cards. `metadataBase` is `https://wahidkamruddin.vercel.app`.
+- `app/layout.tsx` — root layout, Poppins font, global metadata (OpenGraph, Twitter cards, robots, canonical). `metadataBase` is `https://wahidkamruddin.vercel.app`. Contains JSON-LD `Person` schema injected via `<script type="application/ld+json">` in the body. Do **not** add hardcoded `images` to the `openGraph` or `twitter` metadata objects — the OG image is served automatically by `opengraph-image.tsx`.
+- `app/opengraph-image.tsx` — Next.js `ImageResponse` OG image: 1200×630 PNG. Fetches Poppins SemiBold + Light from Google Fonts at request time. Renders the mocha-palette design (☕ Code Café. brand tag, large name, subtitle, URL). Next.js auto-injects the `og:image` and `twitter:image` meta tags pointing to this route.
 - `app/page.tsx` — single-page composition: `<Hero>`, `<Me>`, `<Projects>`, `<Contact>`, with `<AudioPlayer>` fixed top-right
 - `app/icon.tsx` — Next.js `ImageResponse` favicon: 32×32 PNG, "WK" text in Poppins SemiBold on `mocha-200` (`#9C6F44`) background.
 - `app/globals.css` — Tailwind base + smooth `scroll-behavior: smooth` on `html` + Embla Carousel CSS variables
