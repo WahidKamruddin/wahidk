@@ -1,17 +1,20 @@
-import AudioPlayer from "./components/audio";
-import Contact from "./components/contact";
+import { ChromeProvider } from "./components/chrome-provider";
+import Nav from "./components/nav";
+import SectionDots from "./components/section-dots";
 import Hero from "./components/hero";
-import Me from "./components/me";
-import Projects from "./components/projects";
+import About from "./components/about";
+import Work from "./components/work";
+import Contact from "./components/contact";
 
 export default function Home() {
   return (
-    <>
-      <div className="fixed top-5 right-5 z-50"><AudioPlayer/></div>
+    <ChromeProvider>
+      <Nav />
+      <SectionDots />
       <Hero />
-      <Me />
-      <Projects />
+      <About />
+      <Work />
       <Contact />
-    </>
+    </ChromeProvider>
   );
 }

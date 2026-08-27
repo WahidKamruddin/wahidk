@@ -20,13 +20,18 @@
 .DS_Store
 *.pem
 
+# design handoff (reference only — prototyping runtime, not for production)
+/design_handoff_code_cafe/
+
 # debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
 # local env files
+.env
 .env*.local
+!.env.example
 
 # vercel
 .vercel
