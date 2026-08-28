@@ -1,4 +1,12 @@
-export type TechKey = "react" | "next" | "typescript" | "tailwind" | "figma";
+export type TechKey =
+  | "react"
+  | "next"
+  | "typescript"
+  | "tailwind"
+  | "figma"
+  | "vite"
+  | "supabase"
+  | "gemini";
 
 export type Project = {
   num: string;
@@ -23,7 +31,7 @@ export const PROJECTS: Project[] = [
     status: "live",
     description:
       "Group chat that folds event planning, tasks, budgets and shared albums into one encrypted app.",
-    stack: ["react", "next", "typescript", "tailwind"],
+    stack: ["react", "typescript", "tailwind", "supabase"],
     href: "https://yaply.us",
     image: "/images/yaply.png",
     alt: "Yaply social app",
@@ -34,7 +42,7 @@ export const PROJECTS: Project[] = [
     status: "live",
     description:
       "AI wardrobe that catalogs your clothes and builds outfits by mood, style and weather.",
-    stack: ["react", "next", "typescript", "tailwind"],
+    stack: ["next", "typescript", "tailwind", "supabase", "gemini"],
     href: "https://fit-ai-closet.netlify.app",
     image: "/images/fit.png",
     alt: "Fit AI closet app",
@@ -45,7 +53,7 @@ export const PROJECTS: Project[] = [
     status: "live",
     description:
       "Live queue board for Khan's Tutorial parent-teacher conference nights — who's up, who's next.",
-    stack: ["react", "next", "typescript", "tailwind"],
+    stack: ["react", "typescript", "vite"],
     href: "https://ktptc.netlify.app",
     image: "/images/ktptc.png",
     alt: "KTPTC parent-teacher conference queue board",

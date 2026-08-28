@@ -7,7 +7,14 @@ import {
   FaReact,
   FaRegEnvelope,
 } from "react-icons/fa";
-import { SiNextdotjs, SiTailwindcss, SiTypescript } from "react-icons/si";
+import {
+  SiGooglegemini,
+  SiNextdotjs,
+  SiSupabase,
+  SiTailwindcss,
+  SiTypescript,
+  SiVite,
+} from "react-icons/si";
 import type { TechKey } from "../lib/projects";
 
 const ICONS: Record<TechKey, IconType> = {
@@ -16,6 +23,9 @@ const ICONS: Record<TechKey, IconType> = {
   typescript: SiTypescript,
   tailwind: SiTailwindcss,
   figma: FaFigma,
+  vite: SiVite,
+  supabase: SiSupabase,
+  gemini: SiGooglegemini,
 };
 
 const LABELS: Record<TechKey, string> = {
@@ -24,6 +34,9 @@ const LABELS: Record<TechKey, string> = {
   typescript: "TypeScript",
   tailwind: "Tailwind",
   figma: "Figma",
+  vite: "Vite",
+  supabase: "Supabase",
+  gemini: "Gemini",
 };
 
 /** Brand colors for the gallery tech pills (inside the dark cup). */
@@ -33,6 +46,9 @@ const BRAND: Record<TechKey, string> = {
   typescript: "#3178C6",
   tailwind: "#38BDF8",
   figma: "#F24E1E",
+  vite: "#A171F8",
+  supabase: "#3ECF8E",
+  gemini: "#8AB4F8",
 };
 
 export function techLabel(key: TechKey) {
