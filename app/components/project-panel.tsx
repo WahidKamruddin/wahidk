@@ -60,7 +60,7 @@ export function ProjectPanelContent({ project }: { project: Project }) {
               key={tech}
               className="inline-flex items-center gap-2 rounded-full border border-[rgba(246,239,230,0.22)] py-1.5 pl-2.5 pr-[13px] text-[11px] font-light tracking-[0.07em] text-inv-200"
             >
-              <TechIcon tech={tech} brand />
+              <TechIcon tech={tech} brand invert />
               {techLabel(tech)}
             </span>
           ))}

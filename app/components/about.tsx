@@ -6,7 +6,65 @@ import { useTypewriter } from "../hooks/useTypewriter";
 import { TechIcon, techLabel } from "./tech-icon";
 
 const ROLES = ["developer.", "designer.", "coffee-addict."];
-const CHIPS: TechKey[] = ["react", "next", "typescript", "tailwind", "figma"];
+
+const LANGUAGES: TechKey[] = [
+  "javascript",
+  "typescript",
+  "python",
+  "sql",
+  "cpp",
+  "java",
+  "html",
+  "css",
+];
+
+const TECHNOLOGIES: TechKey[] = [
+  "react",
+  "next",
+  "node",
+  "express",
+  "react-native",
+  "expo",
+  "swift",
+  "postgres",
+  "mongodb",
+  "prisma",
+  "aws",
+  "docker",
+  "claude-code",
+  "firebase",
+  "supabase",
+  "netlify",
+  "nginx",
+  "playwright",
+  "git",
+  "github",
+  "tailwind",
+  "bootstrap",
+  "flask",
+  "tensorflow",
+];
+
+function SkillGroup({ label, items }: { label: string; items: TechKey[] }) {
+  return (
+    <div>
+      <p className="mb-[10px] text-[10px] font-medium uppercase tracking-[0.28em] text-mocha-600">
+        {label}
+      </p>
+      <div className="flex flex-wrap gap-2">
+        {items.map((tech) => (
+          <span
+            key={tech}
+            className="inline-flex items-center gap-2 rounded-full border border-[rgba(86,53,23,0.18)] bg-[rgba(251,248,244,0.55)] py-[6px] pl-[10px] pr-[13px] text-[12px] font-light tracking-[0.04em] text-body-alt"
+          >
+            <TechIcon tech={tech} size={14} brand />
+            {techLabel(tech)}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function About() {
   const role = useTypewriter(ROLES);
@@ -68,16 +126,9 @@ export default function About() {
               cappuccino, or working on my next side project.
             </p>
 
-            <div className="mt-[clamp(22px,3.4vh,36px)] flex flex-wrap gap-2">
-              {CHIPS.map((tech) => (
-                <span
-                  key={tech}
-                  className="inline-flex items-center gap-2 rounded-full border border-[rgba(86,53,23,0.2)] py-[7px] pl-[11px] pr-[14px] text-[12px] font-light tracking-[0.06em] text-body-alt"
-                >
-                  <TechIcon tech={tech} tint="#9C6F44" />
-                  {techLabel(tech)}
-                </span>
-              ))}
+            <div className="mt-[clamp(24px,4vh,40px)] flex flex-col gap-[clamp(18px,2.6vh,26px)]">
+              <SkillGroup label="Languages" items={LANGUAGES} />
+              <SkillGroup label="Technologies" items={TECHNOLOGIES} />
             </div>
           </div>
         </div>

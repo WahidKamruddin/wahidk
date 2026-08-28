@@ -32,7 +32,7 @@ page (Hero → About → Work → Contact), no route changes for the main experi
 - `app/lib/motion.ts` — `clamp` / `seg` / `lerp` / `ease` (cubic in-out) helpers for the Work scroll story.
 - `app/lib/contact.ts` — `CONTACT_EMAIL` + the typed `CONTACT_CARDS` list (Email, LinkedIn, Instagram, GitHub) used by the contact section.
 - `app/hooks/useTypewriter.ts` — character-by-character role cycler (105ms type / 55ms delete / 1500ms hold / 320ms gap). Returns a static first word under `prefers-reduced-motion`.
-- `app/components/tech-icon.tsx` — `react-icons` map for tech + social logos, with `tint` / `brand` props. `techLabel()` + `SOCIAL_ICONS`. All brand icons are bundled here — no `cdn.simpleicons.org` at runtime.
+- `app/components/tech-icon.tsx` — `react-icons` map for every `TechKey` (languages + technologies) plus social logos, with `tint` / `brand` / `invert` props (`invert` renders the monochrome-black brands in `MONO` as cream on dark surfaces). `techLabel()` + `SOCIAL_ICONS`. All brand icons are bundled here — no `cdn.simpleicons.org` at runtime.
 
 ### Component responsibilities
 
@@ -40,7 +40,8 @@ page (Hero → About → Work → Contact), no route changes for the main experi
 - **`nav.tsx`** (`"use client"`) — fixed nav bar; reads `useChrome().inside` and swaps to its dark variant. `WK.` wordmark + `Code Café` lockup, three section links. No audio control.
 - **`section-dots.tsx`** (`"use client"`) — right-edge fixed dots, `aria-current` + visible focus ring, inverts with `inside`.
 - **`hero.tsx`** (server) — landing section. Warm radial gradient + inline `feTurbulence` grain. CSS-driven entrance (`animate-reveal` keyframe, staggered `animationDelay`) so content is never trapped behind a JS animation.
-- **`about.tsx`** (`"use client"`) — layered ghost/real "About me" header, circular `next/image` portrait (`/images/picture.jpeg`, `object-[72%_78%]`), `useTypewriter` role line with a blinking caret, bio paragraph (client's own copy — do not rewrite), tech chips.
+- **`about.tsx`** (`"use client"`) — layered ghost/real "About me" header, circular `next/image` portrait (`/images/picture.jpeg`, `object-[72%_78%]`), `useTypewriter` role line with a blinking caret, bio paragraph (client's own copy — do not rewrite), and two chip groups
+  ("Languages" / "Technologies") rendered from `TechKey` lists with brand-colored `react-icons` logos.
 - **`work.tsx`** (`"use client"`) — the signature scroll story. See below. Renders `<WorkStatic>` (a plain stacked list) instead when `prefers-reduced-motion`.
 - **`project-panel.tsx`** (server) — one project's content (meta row, title, description, tech pills, CTA / "In progress", screenshot). Shared by the Work gallery and the reduced-motion fallback.
 - **`contact.tsx`** (server) — `bg-cream-100`. "Last call" eyebrow, "Keep in touch." heading, link cards from `CONTACT_CARDS`, footer. Hover states are pure CSS (no client boundary).
