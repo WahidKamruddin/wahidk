@@ -103,7 +103,8 @@ function WorkStory({ setInside }: { setInside: (v: boolean) => void }) {
     if (showList) {
       const listLeft = cssClamp(20, 0.04 * iw, 64);
       const listWidth = cssClamp(180, 0.16 * iw, 240);
-      listPad = listLeft + listWidth + 36;
+      // Gutter between the project list (table of contents) and the panel copy.
+      listPad = listLeft + listWidth + cssClamp(48, 0.07 * iw, 110);
       if (iw - listPad - sidePad < 530) {
         listPad = 0;
         showList = false;

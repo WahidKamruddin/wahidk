@@ -6,12 +6,12 @@ import { TechIcon, techLabel } from "./tech-icon";
 export function ProjectPanelContent({ project }: { project: Project }) {
   const live = project.status === "live";
   const screenshot = (
-    <div className="relative aspect-[1400/900] max-h-[56vh] w-full max-w-[560px] flex-[1_1_380px] overflow-hidden rounded-[20px] shadow-[0_3vh_8vh_rgba(0,0,0,0.45)]">
+    <div className="relative aspect-[1400/900] max-h-[66vh] w-full max-w-[840px] flex-[1.5_1_460px] overflow-hidden rounded-[20px] shadow-[0_3vh_8vh_rgba(0,0,0,0.45)]">
       <Image
         src={project.image}
         alt={project.alt}
         fill
-        sizes="(max-width: 900px) 90vw, 560px"
+        sizes="(max-width: 900px) 90vw, 840px"
         className="object-cover object-top"
       />
     </div>
@@ -19,7 +19,7 @@ export function ProjectPanelContent({ project }: { project: Project }) {
 
   return (
     <>
-      <div className="flex-[1_1_270px] max-w-[400px]">
+      <div className="flex-[1_1_260px] max-w-[370px]">
         <div className="mb-[clamp(12px,2.2vh,22px)] flex items-center gap-3">
           <span className="text-[11px] tracking-[0.3em] text-mocha-400">
             {project.num}
@@ -90,12 +90,12 @@ export function ProjectPanelContent({ project }: { project: Project }) {
           href={project.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex flex-[1_1_380px] justify-center transition-transform duration-500 ease-out hover:-translate-y-1.5"
+          className="flex flex-[1.5_1_460px] justify-center transition-transform duration-500 ease-out hover:-translate-y-1.5"
         >
           {screenshot}
         </a>
       ) : (
-        <div className="flex flex-[1_1_380px] justify-center">{screenshot}</div>
+        <div className="flex flex-[1.5_1_460px] justify-center">{screenshot}</div>
       )}
     </>
   );

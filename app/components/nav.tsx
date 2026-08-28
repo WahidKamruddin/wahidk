@@ -5,7 +5,8 @@ import { useChrome } from "./chrome-provider";
 const LINKS = [
   { label: "About", href: "#about" },
   { label: "Work", href: "#work" },
-  { label: "Contact", href: "#contact" },
+  { label: "Projects", href: "/projects" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Nav() {
@@ -31,20 +32,14 @@ export default function Nav() {
           >
             WK
           </span>
-          <span
-            className={`text-2xl font-medium leading-none transition-colors duration-[400ms] ${
-              inside ? "text-mocha-300" : "text-mocha-600"
-            }`}
-          >
-            .
-          </span>
+         
         </span>
         <span
           className={`text-[9px] font-light uppercase tracking-[0.28em] transition-colors duration-[400ms] ${
             inside ? "text-[#C29A72]" : "text-mocha-600"
           }`}
         >
-          Code&nbsp;Café
+          Wahid&nbsp;Kamruddin
         </span>
       </a>
 
