@@ -30,6 +30,7 @@ const SKILL_GROUPS: { label: string; items: TechKey[] }[] = [
       "express",
       "flask",
       "tensorflow",
+      "vite",
       "tailwind",
       "bootstrap",
     ],
