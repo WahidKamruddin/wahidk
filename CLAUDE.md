@@ -40,8 +40,8 @@ page (Hero → About → Work → Contact), no route changes for the main experi
 - **`nav.tsx`** (`"use client"`) — fixed nav bar; reads `useChrome().inside` and swaps to its dark variant. `WK.` wordmark + `Code Café` lockup, three section links. No audio control.
 - **`section-dots.tsx`** (`"use client"`) — right-edge fixed dots, `aria-current` + visible focus ring, inverts with `inside`.
 - **`hero.tsx`** (server) — landing section. Warm radial gradient + inline `feTurbulence` grain. CSS-driven entrance (`animate-reveal` keyframe, staggered `animationDelay`) so content is never trapped behind a JS animation.
-- **`about.tsx`** (`"use client"`) — layered ghost/real "About me" header, circular `next/image` portrait (`/images/picture.jpeg`, `object-[72%_78%]`), `useTypewriter` role line with a blinking caret, bio paragraph (client's own copy — do not rewrite), and two chip groups
-  ("Languages" / "Technologies") rendered from `TechKey` lists with brand-colored `react-icons` logos.
+- **`about.tsx`** (`"use client"`) — layered ghost/real "About me" header, circular `next/image` portrait (`/images/picture.jpeg`, `object-[72%_78%]`), `useTypewriter` role line with a blinking caret, bio paragraph (client's own copy — do not rewrite), and the `SKILL_GROUPS`
+  chip groups (Languages, Frameworks & Libraries, Mobile, Databases, Cloud & DevOps, Testing, Tools) rendered from `TechKey` lists with brand-colored `react-icons` logos.
 - **`work.tsx`** (`"use client"`) — the signature scroll story. See below. Renders `<WorkStatic>` (a plain stacked list) instead when `prefers-reduced-motion`.
 - **`project-panel.tsx`** (server) — one project's content (meta row, title, description, tech pills, CTA / "In progress", screenshot). Shared by the Work gallery and the reduced-motion fallback.
 - **`contact.tsx`** (server) — `bg-cream-100`. "Last call" eyebrow, "Keep in touch." heading, link cards from `CONTACT_CARDS`, footer. Hover states are pure CSS (no client boundary).

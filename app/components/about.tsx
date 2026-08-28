@@ -7,42 +7,41 @@ import { TechIcon, techLabel } from "./tech-icon";
 
 const ROLES = ["developer.", "designer.", "coffee-addict."];
 
-const LANGUAGES: TechKey[] = [
-  "javascript",
-  "typescript",
-  "python",
-  "sql",
-  "cpp",
-  "java",
-  "html",
-  "css",
-];
-
-const TECHNOLOGIES: TechKey[] = [
-  "react",
-  "next",
-  "node",
-  "express",
-  "react-native",
-  "expo",
-  "swift",
-  "postgres",
-  "mongodb",
-  "prisma",
-  "aws",
-  "docker",
-  "claude-code",
-  "firebase",
-  "supabase",
-  "netlify",
-  "nginx",
-  "playwright",
-  "git",
-  "github",
-  "tailwind",
-  "bootstrap",
-  "flask",
-  "tensorflow",
+const SKILL_GROUPS: { label: string; items: TechKey[] }[] = [
+  {
+    label: "Languages",
+    items: [
+      "javascript",
+      "typescript",
+      "python",
+      "sql",
+      "cpp",
+      "java",
+      "html",
+      "css",
+    ],
+  },
+  {
+    label: "Frameworks & Libraries",
+    items: [
+      "react",
+      "next",
+      "node",
+      "express",
+      "flask",
+      "tensorflow",
+      "tailwind",
+      "bootstrap",
+    ],
+  },
+  { label: "Mobile", items: ["react-native", "expo", "swift"] },
+  { label: "Databases", items: ["postgres", "mongodb", "prisma"] },
+  {
+    label: "Cloud & DevOps",
+    items: ["aws", "docker", "firebase", "supabase", "netlify", "nginx"],
+  },
+  { label: "Testing", items: ["playwright"] },
+  { label: "Tools", items: ["git", "github", "claude-code"] },
 ];
 
 function SkillGroup({ label, items }: { label: string; items: TechKey[] }) {
@@ -126,9 +125,14 @@ export default function About() {
               cappuccino, or working on my next side project.
             </p>
 
-            <div className="mt-[clamp(24px,4vh,40px)] flex flex-col gap-[clamp(18px,2.6vh,26px)]">
-              <SkillGroup label="Languages" items={LANGUAGES} />
-              <SkillGroup label="Technologies" items={TECHNOLOGIES} />
+            <div className="mt-[clamp(24px,4vh,40px)] flex flex-col gap-[clamp(16px,2.4vh,24px)]">
+              {SKILL_GROUPS.map((group) => (
+                <SkillGroup
+                  key={group.label}
+                  label={group.label}
+                  items={group.items}
+                />
+              ))}
             </div>
           </div>
         </div>
