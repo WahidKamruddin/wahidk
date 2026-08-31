@@ -4,7 +4,6 @@ import { TechIcon, techLabel } from "./tech-icon";
 
 /** One project's content — shared by the scroll gallery and the reduced-motion stack. */
 export function ProjectPanelContent({ project }: { project: Project }) {
-  const live = project.status === "live";
   const screenshot = (
     <div className="relative aspect-[1400/900] max-h-[66vh] w-full max-w-[840px] flex-[1.5_1_460px] overflow-hidden rounded-[20px] shadow-[0_3vh_8vh_rgba(0,0,0,0.45)]">
       <Image
@@ -20,25 +19,6 @@ export function ProjectPanelContent({ project }: { project: Project }) {
   return (
     <>
       <div className="flex-[1_1_260px] max-w-[370px]">
-        <div className="mb-[clamp(12px,2.2vh,22px)] flex items-center gap-3">
-          <span className="text-[11px] tracking-[0.3em] text-mocha-400">
-            {project.num}
-          </span>
-          <span className="h-px w-6 bg-[rgba(194,154,114,0.6)]" />
-          <span className="flex items-center gap-2">
-            <span
-              className="h-1.5 w-1.5 rounded-full"
-              style={{ background: live ? "#9CB59A" : "#C29A72" }}
-            />
-            <span
-              className={`text-[10px] uppercase tracking-[0.2em] ${
-                live ? "text-inv-200" : "text-inv-300"
-              }`}
-            >
-              {live ? "Live" : "Coming soon"}
-            </span>
-          </span>
-        </div>
 
         <h3
           className={`font-extralight leading-[1.02] tracking-[-0.03em] text-inv-100 ${
@@ -74,8 +54,7 @@ export function ProjectPanelContent({ project }: { project: Project }) {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 rounded-full bg-cream-100 px-6 py-[13px] text-[13px] tracking-[0.05em] text-coffee-deep transition-[background-color,transform] duration-[350ms] ease-out hover:-translate-y-0.5 hover:bg-mocha-300"
             >
-              Visit site
-              <span className="h-px w-[14px] bg-current" />
+              Explore More
             </a>
           ) : (
             <span className="inline-flex items-center rounded-full border border-[rgba(246,239,230,0.24)] px-6 py-[13px] text-[13px] tracking-[0.05em] text-inv-300">
