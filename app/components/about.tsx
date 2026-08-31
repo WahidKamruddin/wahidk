@@ -16,33 +16,28 @@ const SKILL_GROUPS: { label: string; items: TechKey[] }[] = [
       "python",
       "sql",
       "cpp",
-      "java",
-      "html",
-      "css",
     ],
   },
   {
     label: "Frameworks & Libraries",
     items: [
       "react",
+      "vite",
       "next",
       "node",
       "express",
       "flask",
-      "tensorflow",
-      "vite",
       "tailwind",
-      "bootstrap",
     ],
   },
   { label: "Mobile", items: ["react-native", "expo", "swift"] },
-  { label: "Databases", items: ["postgres", "mongodb", "prisma"] },
+  { label: "Databases & ORMs", items: ["postgres", "mongodb", "prisma"] },
   {
     label: "Cloud & DevOps",
     items: ["aws", "docker", "firebase", "supabase", "netlify", "nginx"],
   },
   { label: "Testing", items: ["playwright"] },
-  { label: "Tools", items: ["git", "github", "claude-code"] },
+  { label: "Tools", items: ["git", "github", "claude-code", "figma"] },
 ];
 
 function SkillGroup({ label, items }: { label: string; items: TechKey[] }) {
@@ -102,7 +97,7 @@ export default function About() {
               />
             </div>
             <span className="text-[10px] uppercase tracking-[0.26em] text-mocha-600">
-              New York City · 2026
+              Based in New York City
             </span>
           </div>
 

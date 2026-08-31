@@ -73,7 +73,7 @@ export default function Hero() {
             i={2}
             className="pl-[clamp(0px,6vw,118px)] font-extralight text-mocha-700"
           >
-            Code <span className="font-light text-mocha-600">Café</span>
+          <span className="font-light text-mocha-600">Café</span>
             <span className="text-mocha-800">.</span>
           </Reveal>
         </h1>
@@ -81,11 +81,11 @@ export default function Hero() {
         <div className="mt-[clamp(40px,8vh,92px)] flex flex-wrap items-end justify-between gap-[clamp(24px,5vw,72px)]">
           <div className="flex flex-wrap items-end gap-[clamp(16px,2vw,24px)]">
             <a
-              href="#contact"
-              className="inline-flex items-center gap-3 rounded-full bg-mocha-800 px-7 py-[15px] text-[14px] tracking-[0.05em] text-cream-50 transition-[background-color,transform] duration-[350ms] ease-out hover:-translate-y-0.5 hover:bg-mocha-900"
+              href="/contact"
+              className="inline-flex items-center gap-3 rounded-full bg-mocha-800 px-9 py-[15px] text-[14px] tracking-[0.05em] text-cream-50 transition-[background-color,transform] duration-[350ms] ease-out hover:-translate-y-0.5 hover:bg-mocha-900"
             >
               Get in touch
-              <span className="h-px w-[14px] bg-current" />
+              
             </a>
             <a
               href={NOTION_URL}
@@ -94,7 +94,7 @@ export default function Hero() {
               className="inline-flex items-center gap-3 rounded-full border border-[rgba(86,53,23,0.3)] px-[26px] py-[15px] text-[14px] font-light text-mocha-800 transition-[background-color,border-color,transform] duration-[350ms] ease-out hover:-translate-y-0.5 hover:border-mocha-800 hover:bg-[rgba(213,170,129,0.24)]"
             >
               <span className="h-[15px] w-[13px] rounded-[2px_2px_6px_6px] border border-current" />
-              Full portfolio
+              Coffee
             </a>
           </div>
 
