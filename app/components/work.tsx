@@ -151,15 +151,22 @@ function WorkStory({ setInside }: { setInside: (v: boolean) => void }) {
         brewRef.current.style.visibility = t1 >= 1 ? "hidden" : "visible";
       }
 
-      // Beat 2 — two beans fall together.
+      // Beat 2 — two beans fall together. They start exactly where the two
+      // collapsed headline lines sat: the `leading-none` stack is 2.1em tall
+      // (F + 0.1em margin + F), so each line's center is ±0.55·F from the
+      // viewport center. Beginning there makes the words appear to morph into
+      // the beans; from there they converge toward center.
       const beansVisible = p >= 0.06 && p < 0.175;
       const t2 = seg(p, 0.06, 0.17);
+      const headF = Math.max(40, Math.min(0.084 * iw, 132)); // clamp(40px,8.4vw,132px)
+      const beanFrom = 0.55 * headF; // px — collapsed headline line-center offset
+      const beanTo = 0.031 * vmin; // px — merge point near center (was 3.1vmin)
       if (beanARef.current) {
-        beanARef.current.style.transform = `translateY(${lerp(-13, -3.1, ease(t2))}vmin)`;
+        beanARef.current.style.transform = `translateY(${-lerp(beanFrom, beanTo, ease(t2))}px)`;
         beanARef.current.style.visibility = beansVisible ? "visible" : "hidden";
       }
       if (beanBRef.current) {
-        beanBRef.current.style.transform = `translateY(${lerp(13, 3.1, ease(t2))}vmin)`;
+        beanBRef.current.style.transform = `translateY(${lerp(beanFrom, beanTo, ease(t2))}px)`;
         beanBRef.current.style.visibility = beansVisible ? "visible" : "hidden";
       }
 
