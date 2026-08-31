@@ -5,7 +5,6 @@ import { useChrome } from "./chrome-provider";
 const LINKS = [
   { label: "About", href: "#about" },
   { label: "Work", href: "#work" },
-  { label: "Projects", href: "/projects" },
   { label: "Contact", href: "/contact" },
 ];
 
