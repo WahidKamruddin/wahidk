@@ -60,7 +60,7 @@ export default function Contact() {
 
         <div className="flex flex-wrap justify-between gap-4 border-t border-[rgba(86,53,23,0.14)] pt-[clamp(20px,3vh,32px)]">
           <span className="text-[12px] font-light tracking-[0.04em] text-foot">
-            Brewed in New York City · wahidkamruddin.com
+            Brewed in New York City
           </span>
           <span className="text-[12px] font-light tracking-[0.04em] text-foot">
             © 2026 Wahid Kamruddin
